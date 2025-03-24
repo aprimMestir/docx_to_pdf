@@ -1,6 +1,8 @@
 from docx2pdf import convert
 import os
 import fitz  # PyMuPDF
+folder_path = "5"
+
 def convert_word_to_pdf(input_file, output_file):
     try:
         # Конвертация Word в PDF
@@ -9,11 +11,11 @@ def convert_word_to_pdf(input_file, output_file):
     except Exception as e:
         print(f"Произошла ошибка: {e}")
 
-folder_path = "5"
+
 for file_name in os.listdir(folder_path):
     input_word_file = f"5/{file_name}"
     output_pdf_file = f"finish/{file_name[:-5]}.pdf"
-    convert_word_to_pdf(input_word_file, output_pdf_file)
+    #convert_word_to_pdf(input_word_file, output_pdf_file)
 def add_png_stamp_to_pdf(input_pdf, output_pdf, stamp_image, position=(0, 0), scale=1.0):
     """
     Добавляет PNG-изображение (печать) на каждую страницу PDF-файла.
@@ -71,3 +73,8 @@ for file_name in os.listdir(folder_path):
         position = (320, 240)  # Позиция печати (x, y)
         scale = 0.8  # Масштаб печати
         add_png_stamp_to_pdf(input_pdf, output_pdf, stamp_image, position, scale)
+
+def file_processing(pach,file_name):
+    input_word_file = f"{pach}/{file_name}"
+    output_pdf_file = f"temp/{file_name[:-5]}.pdf"
+    convert_word_to_pdf(input_word_file, output_pdf_file)
