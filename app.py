@@ -2,9 +2,10 @@ import pygame
 import sys
 import os
 pygame.init()
+pygame.display.set_caption('docx to pdf')
 width, height = 640, 480
 screen = pygame.display.set_mode((width, height))
-rect_color = (100, 100, 100)  # Зеленый цвет
+rect_color = (100, 100, 100)  # цвет фона области файла
 text_color = (255, 255, 255)  # Белый цвет
 rect_x, rect_y = 10, 10
 
@@ -34,7 +35,7 @@ while running:
                         print("Это папка!")
                     elif os.path.isfile(dragged_file):  # Проверяем, является ли путь файлом
                         print("Это файл!")
-    screen.fill((50, 50, 50))
+    screen.fill((50, 50, 50))#цвет фона
     pygame.draw.rect(screen, rect_color, (rect_x, rect_y, rect_width, rect_height))
     screen.blit(text_surface, (text_x, text_y))
     pygame.display.flip()
