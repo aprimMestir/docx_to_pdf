@@ -6,7 +6,8 @@ width, height = 640, 480
 screen = pygame.display.set_mode((width, height))
 rect_color = (100, 100, 100)  # Зеленый цвет
 text_color = (255, 255, 255)  # Белый цвет
-rect_x, rect_y = 10, 10git branch -M main
+rect_x, rect_y = 10, 10
+#tetx
 rect_width, rect_height = 300, 150
 text = "Перетащите папку сюда"
 font = pygame.font.Font(None, 24)  # None использует системный шрифт, 36 — размер шрифта
